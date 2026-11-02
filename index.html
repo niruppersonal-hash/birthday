@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Madhulu! 💖 03/11/2026</title>
+  <meta name="description" content="A romantic, natural birthday celebration for Madhulu in white and pink, featuring archery heart shoot, animated 3D layered cake, 5 compliment balloons, photo memories, and a special love letter.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Rose Petals & Floating Hearts Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Top Navigation Bar & Music Center -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="heart-icon">💖</span>
+      <div class="logo-info">
+        <span class="logo-text">For Madhulu</span>
+        <span class="date-badge-top">03/11/2026</span>
+      </div>
+    </div>
+    
+    <!-- Stage Stepper -->
+    <nav class="stepper-nav" aria-label="Celebration Stages">
+      <button class="step-btn active" data-stage="1" id="step-nav-1">
+        <span class="step-num">1</span>
+        <span class="step-label">The Heart</span>
+      </button>
+      <div class="step-line"></div>
+      <button class="step-btn" data-stage="2" id="step-nav-2">
+        <span class="step-num">2</span>
+        <span class="step-label">Birthday Cake</span>
+      </button>
+      <div class="step-line"></div>
+      <button class="step-btn" data-stage="3" id="step-nav-3">
+        <span class="step-num">3</span>
+        <span class="step-label">5 Balloons</span>
+      </button>
+      <div class="step-line"></div>
+      <button class="step-btn" data-stage="4" id="step-nav-4">
+        <span class="step-num">4</span>
+        <span class="step-label">Memories & Letter</span>
+      </button>
+    </nav>
+
+    <!-- Music Player Controls for "I Wanna Be Yours" -->
+    <div class="header-actions">
+      <div class="music-pill" id="music-pill">
+        <button id="music-play-btn" class="icon-round-btn" title="Play / Pause 'I Wanna Be Yours'">
+          <span id="music-play-icon">▶</span>
+        </button>
+        <div class="music-track-info" id="music-track-info" title="Toggle music">
+          <span class="track-equalizer">
+            <i></i><i></i><i></i><i></i>
+          </span>
+          <span class="track-title" id="track-title">I Wanna Be Yours - Arctic Monkeys</span>
+        </div>
+        
+        <label for="song-file-input" class="import-song-label" title="Import 'I Wanna Be Yours' MP3 from local files">
+          <span>📂 Import MP3</span>
+          <input type="file" id="song-file-input" accept="audio/*" style="display: none;">
+        </label>
+      </div>
+
+      <button id="sound-toggle-btn" class="glass-pill-btn" title="Toggle Sound Effects">
+        <span class="btn-icon" id="sound-icon">🔊</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Multi-Stage Experience Container -->
+  <main class="experience-container">
+
+    <!-- ================= STAGE 1: SHOOT THE HEART ================= -->
+    <section class="stage-section active" id="stage-1">
+      <div class="stage-content stage-center">
+        <div class="stage-badge">Stage 1 of 4 • 03/11/2026</div>
+        <h1 class="main-title glow-text">Shoot Cupid's Arrow Into My Heart for Madhulu 💘</h1>
+        <p class="subtitle">Pull back Cupid's bow or click below to unlock a sweet birthday surprise for Madhulu!</p>
+
+        <!-- Shooting Range Arena -->
+        <div class="archery-arena" id="archery-arena">
+          <!-- Floating Heart Target -->
+          <div class="heart-target-wrapper" id="heart-target-wrapper">
+            <div class="target-halo"></div>
+            <div class="heart-target" id="heart-target" title="Click or shoot with bow to pierce the heart!">
+              <div class="heart-half left-half">
+                <svg viewBox="0 0 100 100" class="heart-svg">
+                  <path d="M50 88 C20 62, 5 45, 5 26 C5 12, 16 2, 30 2 C40 2, 47 9, 50 18 Z" fill="url(#pinkGlowLeft)"/>
+                  <defs>
+                    <linearGradient id="pinkGlowLeft" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#ff758c"/>
+                      <stop offset="100%" stop-color="#ff2e63"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="heart-half right-half">
+                <svg viewBox="0 0 100 100" class="heart-svg">
+                  <path d="M50 88 C80 62, 95 45, 95 26 C95 12, 84 2, 70 2 C60 2, 53 9, 50 18 Z" fill="url(#pinkGlowRight)"/>
+                  <defs>
+                    <linearGradient id="pinkGlowRight" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#ffa5ba"/>
+                      <stop offset="100%" stop-color="#e91e63"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="heart-center-glow"></div>
+              <div class="target-rings">
+                <span class="ring ring-1"></span>
+                <span class="ring ring-2"></span>
+                <span class="ring ring-3"></span>
+              </div>
+            </div>
+
+            <!-- Opened Message (Appears when heart is split) -->
+            <div class="unfolded-secret" id="unfolded-secret">
+              <div class="secret-inner">
+                <div class="sparkle-tag">✨ DIRECT HIT • 03/11/2026 ✨</div>
+                <h2 class="birthday-cheer">Happy Birthday, My Beloved Madhulu! 💖</h2>
+                <p class="sweet-quote">"You stole my heart the day we met, Madhulu, and every single beat belongs to you."</p>
+                <div class="secret-actions">
+                  <button class="primary-glow-btn pulse-anim" id="to-stage-2-btn">
+                    <span>Continue to Birthday Cake 🎂</span>
+                    <span class="arrow-sym">→</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flying Arrow Projectile -->
+          <div class="arrow-projectile" id="arrow-projectile">
+            <div class="arrow-head"></div>
+            <div class="arrow-shaft"></div>
+            <div class="arrow-fletching"></div>
+            <div class="arrow-trail"></div>
+          </div>
+
+          <!-- Cupid Bow Rig (Interactive) -->
+          <div class="bow-rig" id="bow-rig">
+            <svg class="bow-svg" viewBox="0 0 200 140">
+              <defs>
+                <linearGradient id="bowGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#f472b6"/>
+                  <stop offset="50%" stop-color="#fb7185"/>
+                  <stop offset="100%" stop-color="#e11d48"/>
+                </linearGradient>
+              </defs>
+              <!-- Bow Wood Arc -->
+              <path class="bow-wood" d="M 20 70 Q 100 10, 180 70" />
+              <!-- Bow String (Draws dynamically) -->
+              <path class="bow-string" id="bow-string-path" d="M 20 70 L 100 70 L 180 70" />
+            </svg>
+            <!-- Ready Arrow -->
+            <div class="loaded-arrow" id="loaded-arrow">
+              <div class="arrow-head"></div>
+              <div class="arrow-shaft"></div>
+              <div class="arrow-fletching"></div>
+            </div>
+          </div>
+
+          <!-- Trajectory Line / Aiming Guide -->
+          <div class="aim-guideline" id="aim-guideline"></div>
+        </div>
+
+        <!-- Archery Controls / Natural Flow -->
+        <div class="archery-instructions">
+          <p class="archery-hint"><span class="key-hint">🏹 Drag & Release Bow</span> or tap the button to shoot!</p>
+          <button class="shoot-btn" id="quick-shoot-btn">
+            <span>🎯 Shoot Cupid's Arrow</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 2: ANIMATED LAYERED CAKE ================= -->
+    <section class="stage-section" id="stage-2">
+      <div class="stage-content stage-center">
+        <div class="stage-badge">Stage 2 of 4 • 03/11/2026</div>
+        <h1 class="main-title glow-text">Madhulu's Birthday Cake 🎂</h1>
+        <p class="subtitle" id="cake-instruction-text">Tap the button to stack the cake layers, then make a wish!</p>
+
+        <!-- Cake Arena -->
+        <div class="cake-display-area">
+          <div class="cake-stand">
+            <div class="cake-plate"></div>
+            <div class="cake-pillar"></div>
+            <div class="cake-base"></div>
+          </div>
+
+          <!-- 3D Layered Cake Assembly -->
+          <div class="cake-assembly" id="cake-assembly">
+            <!-- Golden Cake Topper -->
+            <div class="cake-topper-banner" id="cake-topper-banner">
+              <span>✨ Happy Birthday Madhulu ✨</span>
+            </div>
+
+            <!-- Candles on Top Tier -->
+            <div class="candles-row" id="cake-candles">
+              <div class="candle" data-candle="1" title="Tap to blow out candle">
+                <div class="candle-flame"></div>
+                <div class="candle-smoke"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body stripe-1"></div>
+              </div>
+              <div class="candle" data-candle="2" title="Tap to blow out candle">
+                <div class="candle-flame"></div>
+                <div class="candle-smoke"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body stripe-2"></div>
+              </div>
+              <div class="candle" data-candle="3" title="Tap to blow out candle">
+                <div class="candle-flame"></div>
+                <div class="candle-smoke"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body stripe-3"></div>
+              </div>
+              <div class="candle" data-candle="4" title="Tap to blow out candle">
+                <div class="candle-flame"></div>
+                <div class="candle-smoke"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body stripe-4"></div>
+              </div>
+              <div class="candle" data-candle="5" title="Tap to blow out candle">
+                <div class="candle-flame"></div>
+                <div class="candle-smoke"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body stripe-5"></div>
+              </div>
+            </div>
+
+            <!-- Tier 3: Top Vanilla Dream & Strawberries -->
+            <div class="cake-tier tier-3" id="cake-tier-3">
+              <div class="tier-frosting-toppings">
+                <span class="berry">🍓</span>
+                <span class="cream-swirl">🍥</span>
+                <span class="berry">🍓</span>
+                <span class="cream-swirl">🍥</span>
+                <span class="berry">🍓</span>
+              </div>
+              <div class="frosting-drips">
+                <div class="drip drip-1"></div>
+                <div class="drip drip-2"></div>
+                <div class="drip drip-3"></div>
+                <div class="drip drip-4"></div>
+              </div>
+              <div class="tier-cake-body">
+                <span class="tier-label">Vanilla Cream & Strawberries</span>
+              </div>
+            </div>
+
+            <!-- Tier 2: Middle Velvet Strawberry Cream -->
+            <div class="cake-tier tier-2" id="cake-tier-2">
+              <div class="frosting-drips drip-pink">
+                <div class="drip drip-p1"></div>
+                <div class="drip drip-p2"></div>
+                <div class="drip drip-p3"></div>
+                <div class="drip drip-p4"></div>
+                <div class="drip drip-p5"></div>
+              </div>
+              <div class="tier-cake-body">
+                <div class="pearl-ribbon">
+                  <span>✨</span><span>💖</span><span>✨</span><span>💖</span><span>✨</span>
+                </div>
+                <span class="tier-label">Strawberry Velvet Tier</span>
+              </div>
+            </div>
+
+            <!-- Tier 1: Bottom Chocolate Truffle Base -->
+            <div class="cake-tier tier-1" id="cake-tier-1">
+              <div class="tier-cake-body">
+                <div class="frosting-bottom-swirls">
+                  <div class="rosette"></div>
+                  <div class="rosette"></div>
+                  <div class="rosette"></div>
+                  <div class="rosette"></div>
+                  <div class="rosette"></div>
+                  <div class="rosette"></div>
+                </div>
+                <span class="tier-label">Chocolate Truffle Base</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wish Celebration Modal / Banner -->
+          <div class="wish-reveal-card" id="wish-reveal-card">
+            <div class="confetti-crown">🎉 BIRTHDAY WISH GRANTED! 🌟</div>
+            <h2 class="wish-title">Happy Birthday, Madhulu!</h2>
+            <p class="wish-body">May all your dreams sparkle into reality, Madhulu. Every wish you blew into these candles is on its way to you!</p>
+            <button class="primary-glow-btn pulse-anim" id="to-stage-3-btn">
+              <span>Pop 5 Surprise Balloons 🎈</span>
+              <span class="arrow-sym">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cake Controls & Clean Step Builder -->
+        <div class="cake-controls">
+          <div class="cake-step-indicators">
+            <div class="cake-step-dot active" data-step="1">1. Base</div>
+            <div class="cake-step-dot" data-step="2">2. Cream</div>
+            <div class="cake-step-dot" data-step="3">3. Top</div>
+            <div class="cake-step-dot" data-step="4">4. Candles</div>
+            <div class="cake-step-dot" data-step="5">5. Blow Wish</div>
+          </div>
+
+          <div class="cake-action-buttons">
+            <button class="action-btn" id="next-layer-btn">
+              <span id="cake-btn-text">Stack Layer 1 (Base) 🍰</span>
+            </button>
+            <button class="action-btn blow-btn" id="blow-candles-btn" style="display: none;">
+              <span>🌬️ Blow Out All Candles for Madhulu!</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 3: 5 BALLOONS WITH COMPLIMENTS ================= -->
+    <section class="stage-section" id="stage-3">
+      <div class="stage-content stage-center">
+        <div class="stage-badge">Stage 3 of 4 • 03/11/2026</div>
+        <h1 class="main-title glow-text">5 Surprise Balloons for Madhulu 🎈</h1>
+        <p class="subtitle">Tap each balloon to pop it and reveal 5 love sentences from my heart to yours!</p>
+
+        <!-- Progress Tracker -->
+        <div class="balloon-progress-bar-wrap">
+          <div class="balloon-progress-text">
+            <span>Balloons Popped: <strong id="popped-count">0</strong> / 5</span>
+            <span class="unlock-status" id="unlock-status">Pop all 5 to open Madhulu's Album & Letter ✨</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="balloon-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Floating Balloons Sky -->
+        <div class="balloons-sky" id="balloons-sky">
+          <!-- Balloon 1: Pastel Pink -->
+          <div class="balloon-item" data-id="1" style="--float-delay: 0s; --float-duration: 4.8s; --balloon-color: #ff758c; --balloon-shadow: rgba(255, 117, 140, 0.45);">
+            <div class="balloon-hitbox" title="Tap to Pop!">
+              <div class="balloon-wrapper">
+                <div class="balloon-sphere">
+                  <div class="balloon-highlight"></div>
+                  <span class="balloon-badge-num">1</span>
+                </div>
+                <div class="balloon-knot"></div>
+                <div class="balloon-string"></div>
+              </div>
+            </div>
+            <div class="pop-instruction">Pop Me! 🎈</div>
+          </div>
+
+          <!-- Balloon 2: Rose Gold -->
+          <div class="balloon-item" data-id="2" style="--float-delay: 1.2s; --float-duration: 5.2s; --balloon-color: #fb7185; --balloon-shadow: rgba(251, 113, 133, 0.45);">
+            <div class="balloon-hitbox" title="Tap to Pop!">
+              <div class="balloon-wrapper">
+                <div class="balloon-sphere">
+                  <div class="balloon-highlight"></div>
+                  <span class="balloon-badge-num">2</span>
+                </div>
+                <div class="balloon-knot"></div>
+                <div class="balloon-string"></div>
+              </div>
+            </div>
+            <div class="pop-instruction">Pop Me! 🎈</div>
+          </div>
+
+          <!-- Balloon 3: Blush Coral -->
+          <div class="balloon-item" data-id="3" style="--float-delay: 0.6s; --float-duration: 4.5s; --balloon-color: #f472b6; --balloon-shadow: rgba(244, 114, 182, 0.45);">
+            <div class="balloon-hitbox" title="Tap to Pop!">
+              <div class="balloon-wrapper">
+                <div class="balloon-sphere">
+                  <div class="balloon-highlight"></div>
+                  <span class="balloon-badge-num">3</span>
+                </div>
+                <div class="balloon-knot"></div>
+                <div class="balloon-string"></div>
+              </div>
+            </div>
+            <div class="pop-instruction">Pop Me! 🎈</div>
+          </div>
+
+          <!-- Balloon 4: Soft Lavender Pink -->
+          <div class="balloon-item" data-id="4" style="--float-delay: 1.8s; --float-duration: 5.5s; --balloon-color: #e879f9; --balloon-shadow: rgba(232, 121, 249, 0.45);">
+            <div class="balloon-hitbox" title="Tap to Pop!">
+              <div class="balloon-wrapper">
+                <div class="balloon-sphere">
+                  <div class="balloon-highlight"></div>
+                  <span class="balloon-badge-num">4</span>
+                </div>
+                <div class="balloon-knot"></div>
+                <div class="balloon-string"></div>
+              </div>
+            </div>
+            <div class="pop-instruction">Pop Me! 🎈</div>
+          </div>
+
+          <!-- Balloon 5: Radiant Magenta Rose -->
+          <div class="balloon-item" data-id="5" style="--float-delay: 0.9s; --float-duration: 4.9s; --balloon-color: #ff4071; --balloon-shadow: rgba(255, 64, 113, 0.45);">
+            <div class="balloon-hitbox" title="Tap to Pop!">
+              <div class="balloon-wrapper">
+                <div class="balloon-sphere">
+                  <div class="balloon-highlight"></div>
+                  <span class="balloon-badge-num">5</span>
+                </div>
+                <div class="balloon-knot"></div>
+                <div class="balloon-string"></div>
+              </div>
+            </div>
+            <div class="pop-instruction">Pop Me! 🎈</div>
+          </div>
+        </div>
+
+        <!-- Revealed Compliments Cards Deck -->
+        <div class="compliments-container">
+          <h3 class="section-subheading">✨ Words from My Heart to Madhulu ✨</h3>
+          <div class="compliments-grid" id="compliments-grid">
+            <!-- Compliment 1 -->
+            <div class="compliment-card locked" id="compliment-1">
+              <div class="card-status-badge">Locked 🎈 #1</div>
+              <div class="card-icon">🌟</div>
+              <p class="compliment-text">"Madhulu, your radiant smile lights up my whole universe and effortlessly melts away every sorrow."</p>
+              <div class="compliment-footer">Compliment 1 • Madhulu</div>
+            </div>
+
+            <!-- Compliment 2 -->
+            <div class="compliment-card locked" id="compliment-2">
+              <div class="card-status-badge">Locked 🎈 #2</div>
+              <div class="card-icon">💖</div>
+              <p class="compliment-text">"Your pure heart, softness, and kindness make you the most beautiful person I have ever known, Madhulu."</p>
+              <div class="compliment-footer">Compliment 2 • Madhulu</div>
+            </div>
+
+            <!-- Compliment 3 -->
+            <div class="compliment-card locked" id="compliment-3">
+              <div class="card-status-badge">Locked 🎈 #3</div>
+              <div class="card-icon">✨</div>
+              <p class="compliment-text">"Your voice and laughter are my favorite melody in this world — nothing brings me more peace than being with you."</p>
+              <div class="compliment-footer">Compliment 3 • Madhulu</div>
+            </div>
+
+            <!-- Compliment 4 -->
+            <div class="compliment-card locked" id="compliment-4">
+              <div class="card-status-badge">Locked 🎈 #4</div>
+              <div class="card-icon">🌸</div>
+              <p class="compliment-text">"You inspire me every single day with your grace, strength, and the breathtaking way you love."</p>
+              <div class="compliment-footer">Compliment 4 • Madhulu</div>
+            </div>
+
+            <!-- Compliment 5 -->
+            <div class="compliment-card locked" id="compliment-5">
+              <div class="card-status-badge">Locked 🎈 #5</div>
+              <div class="card-icon">👑</div>
+              <p class="compliment-text">"Madhulu, you are my forever home, my safest shelter, and my greatest blessing. I Love You endlessly."</p>
+              <div class="compliment-footer">Compliment 5 • Madhulu</div>
+            </div>
+          </div>
+
+          <!-- Bottom Stage Transition Button -->
+          <div class="stage-finish-area" id="stage-3-finish-area" style="display: none;">
+            <div class="celebration-notice">🎉 All 5 Balloons Popped! The Memory Album & Love Letter Are Unlocked!</div>
+            <button class="primary-glow-btn pulse-anim" id="to-stage-4-btn">
+              <span>Read Letter to Madhulu & Memories 💌</span>
+              <span class="arrow-sym">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 4: OUR PHOTOS & LETTER TO MADHULU ================= -->
+    <section class="stage-section" id="stage-4">
+      <div class="stage-content">
+        <div class="stage-badge text-center">Stage 4 of 4 • 03/11/2026</div>
+        <h1 class="main-title glow-text text-center">Our Cherished Moments with Madhulu 📸</h1>
+        <p class="subtitle text-center">Every memory with you is etched in my soul. Date: 03/11/2026</p>
+
+        <!-- Polaroid Memory Board -->
+        <div class="polaroid-grid" id="polaroid-grid">
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card" data-index="0" style="--rotation: -2.5deg;">
+            <div class="pin">📌</div>
+            <div class="polaroid-photo-frame">
+              <img src="assets/images/photo1.jpg" alt="Madhulu & Me, Always Together" class="polaroid-img" id="img-0">
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-handwritten">Madhulu & Me, Always Together 💖</p>
+              <span class="caption-date">03/11/2026</span>
+            </div>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card" data-index="1" style="--rotation: 2.8deg;">
+            <div class="pin">📌</div>
+            <div class="polaroid-photo-frame">
+              <img src="assets/images/photo2.jpg" alt="Madhulu's Beautiful Butterfly Glow" class="polaroid-img" id="img-1">
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-handwritten">Madhulu's Beautiful Butterfly Glow ✨</p>
+              <span class="caption-date">03/11/2026</span>
+            </div>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card" data-index="2" style="--rotation: -1.8deg;">
+            <div class="pin">📌</div>
+            <div class="polaroid-photo-frame">
+              <img src="assets/images/photo3.jpg" alt="The Cutest Smile in the World" class="polaroid-img" id="img-2">
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-handwritten">The Cutest Smile in the World 🥰</p>
+              <span class="caption-date">03/11/2026</span>
+            </div>
+          </div>
+
+          <!-- Polaroid 4 -->
+          <div class="polaroid-card" data-index="3" style="--rotation: 3.2deg;">
+            <div class="pin">📌</div>
+            <div class="polaroid-photo-frame">
+              <img src="assets/images/photo4.jpg" alt="Sweetest Soul & Innocent Eyes" class="polaroid-img" id="img-3">
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-handwritten">Sweetest Soul & Innocent Eyes 🌸</p>
+              <span class="caption-date">03/11/2026</span>
+            </div>
+          </div>
+
+          <!-- Polaroid 5: Special Happy Birthday Collage -->
+          <div class="polaroid-card polaroid-featured" data-index="4" style="--rotation: -1.2deg;">
+            <div class="pin">📌</div>
+            <div class="polaroid-photo-frame frame-featured">
+              <img src="assets/images/photo5.jpg" alt="Happy Birthday Madhulu Collage" class="polaroid-img" id="img-4">
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-handwritten">Happy Birthday, My Entire World! 🎂</p>
+              <span class="caption-date">03/11/2026 • Forever Yours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= A LETTER TO MADHULU ALONG WITH I LOVE YOU ================= -->
+        <div class="love-letter-envelope" id="letter-to-madhulu">
+          <div class="letter-stamp">💌 FOR MADHULU • 03/11/2026</div>
+          <div class="letter-paper">
+            <div class="letter-meta">
+              <span class="letter-date">Date: 03/11/2026</span>
+              <span class="song-quote">🎶 "I wanna be yours..."</span>
+            </div>
+
+            <h2 class="letter-heading">My Dearest Madhulu,</h2>
+            
+            <div class="letter-body-content" id="letter-content" contenteditable="true" title="Click to edit and add your personal touch for Madhulu">
+              <p>From the moment you walked into my life, everything changed for the better. You brought vibrant colors into my days, warmth into my coldest nights, and a gentle sweetness into my heart that I never knew existed.</p>
+              
+              <p>On this special day, <strong>03/11/2026</strong>, I want to promise you that no matter where life leads us, I will always be right here by your side — holding your hand through every high and low, celebrating every dream of yours, and loving you unconditionally.</p>
+              
+              <p>Secrets fade and seasons change, but what I feel for you only deepens with every single sunrise. Just like the song playing in our hearts, <em>I wanna be yours</em> — today, tomorrow, and through all of eternity.</p>
+              
+              <p class="letter-closing">Madhulu, you are my heart, my greatest blessing, and the love of my life.</p>
+            </div>
+
+            <!-- Grand "I LOVE YOU, MADHULU" Interactive Seal -->
+            <div class="i-love-you-seal-container">
+              <button class="i-love-you-seal-btn" id="i-love-you-seal-btn" title="Click to seal with love!">
+                <span class="seal-heart">❤️</span>
+                <span class="seal-text">I LOVE YOU, MADHULU</span>
+                <span class="seal-heart">❤️</span>
+              </button>
+              <div class="seal-subtext">Tap the seal to shower our love with hearts and fireworks!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grand Celebration Finale Controls -->
+        <div class="finale-celebration-wrap">
+          <button class="grand-celebrate-btn" id="grand-celebrate-btn">
+            <span>🎊 Shower Madhulu With Infinite Fireworks & Confetti! 🎆</span>
+          </button>
+          <button class="replay-journey-btn" id="replay-journey-btn">
+            <span>🔄 Replay From Beginning (Shoot Heart)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
+      <div class="lightbox-image-wrap">
+        <img src="" alt="Enlarged Memory Photo for Madhulu" id="lightbox-img">
+      </div>
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title">Caption</h3>
+        <p id="lightbox-date">Date</p>
+      </div>
+      <div class="lightbox-nav">
+        <button class="lightbox-nav-btn prev" id="lightbox-prev-btn">&#10094;</button>
+        <button class="lightbox-nav-btn next" id="lightbox-next-btn">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio System & App Logic -->
+  <script src="audio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
